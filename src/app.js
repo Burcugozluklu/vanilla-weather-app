@@ -20,7 +20,7 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
-  let icon.Element =document.querySelector("#icon")
+  let iconElement =document.querySelector("#icon");
   temperatureElement.innerHTML = HTML.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -48,11 +48,12 @@ function handleSubmit(event){
 
 function displayFahrenheitTemperature(event){
   event.preventDefault();
-  let displayFahrenheitTemperature = (14 *9) / 5 + 32;
+  let displayFahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
   alert("Link clicked");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
 
 search("New York");
 
